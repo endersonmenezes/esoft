@@ -9,7 +9,11 @@ public class Conceito {
     public Conceito(Aluno aluno, Avaliação avaliação, Integer nota) {
         this.aluno = aluno;
         this.avaliação = avaliação;
-        this.nota = nota;
+        if (nota >= 0 && nota <= 10) {
+            this.nota = nota;
+        } else {
+            throw new RuntimeException("Nota Inválida! O valor deve estar entre 0 e 10");
+        }
     }
 
     public String getId() {
